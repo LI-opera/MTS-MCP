@@ -58,20 +58,18 @@ HTN 已通过 Codex 当前对话中的原生 MCP 工具调用验证；RA 通过�
 </tr>
 </table>
 
-### MCP 与 Codex 演示（待补实拍截图）
+### MCP 与 Codex 演示
 
-**下面三张是明确标记的占位图，不是真实界面截图。** 请按 [截图补充指南](docs/images/mcp/README.md) 上传图片；三列布局已准备好。
+以下真实截图依次展示工具已加载、实际 MCP 调用及 HTN 分析结果。点击图片可查看原图。
 
 <table>
 <tr><th width="33%">① 工具接入</th><th width="33%">② 发起分析</th><th width="33%">③ 分析结果</th></tr>
 <tr>
-<td width="33%" valign="top"><img src="docs/images/mcp/01-tool-setup-placeholder.svg" alt="待补截图 01：Codex 已加载医学 MCP 工具" /><br/><b>【待补截图 01】</b><br/>展示服务已连接、工具已加载。保存为 <code>docs/images/mcp/01-tool-setup.png</code>。</td>
-<td width="33%" valign="top"><img src="docs/images/mcp/02-tool-call-placeholder.svg" alt="待补截图 02：虚构英文病例与实际工具调用" /><br/><b>【待补截图 02】</b><br/>展示英文输入和实际工具调用。保存为 <code>docs/images/mcp/02-tool-call.png</code>。</td>
-<td width="33%" valign="top"><img src="docs/images/mcp/03-analysis-result-placeholder.svg" alt="待补截图 03：扩写与标准概念结果" /><br/><b>【待补截图 03】</b><br/>展示扩写文本、标准术语和结果状态。保存为 <code>docs/images/mcp/03-analysis-result.png</code>。</td>
+<td width="33%" valign="top"><a href="docs/images/mcp/01-tool-setup.png"><img src="docs/images/mcp/01-tool-setup.png" width="100%" alt="Codex 已加载医学 MCP 工具，展示名称和用途" /></a></td>
+<td width="33%" valign="top"><a href="docs/images/mcp/02-tool-call.png"><img src="docs/images/mcp/02-tool-call.png" width="100%" alt="虚构 HTN 文本触发实际 MCP 调用并返回成功状态" /></a></td>
+<td width="33%" valign="top"><a href="docs/images/mcp/03-analysis-result.png"><img src="docs/images/mcp/03-analysis-result.png" width="100%" alt="HTN 扩写为 hypertension 并映射到 Hypertensive disorder" /></a></td>
 </tr>
 </table>
-
-<!-- MCP_SCREENSHOTS: 上传真实 PNG 后，把上面各 src 中的 -placeholder.svg 改为 .png，并删除可见的待补说明和本注释。 -->
 
 ## 核心能力
 
@@ -195,7 +193,7 @@ PYTHONUTF8 = '1'
 | MCP 协议 | 官方 SDK 内存调用及 stdio 子进程握手、工具发现、调用 |
 | 实际后端链路 | RA 虚构病例经 SDK 客户端调用成功 |
 | Codex 原生工具调用 | HTN 虚构病例扩写和概念映射成功 |
-| 截图 | MCP 实拍图片待补，占位图已明确标记 |
+| 截图 | 已补充 Codex 工具加载、实际调用与 HTN 结果截图 |
 | 医学准确率 / 多用户 / 公网部署 | 未据上述示例作出验证或承诺 |
 
 `/health` 仅表示 API 在线，不能证明模型和术语库可用。后端退出会导致工具无法分析；本版本不提供进程自动保活。离线测试、真实调用和医学效果评估是不同验证层次。
@@ -215,7 +213,7 @@ PYTHONUTF8 = '1'
 ├─ backend/              # 医学 API、扩写与映射、评估逻辑
 ├─ frontend/             # Web 工作台
 ├─ docs/MCP_SETUP.md     # 接入与启动指南
-├─ docs/images/mcp/      # 三张待补截图及补充说明
+├─ docs/images/mcp/      # 三张真实演示截图及维护说明
 ├─ examples/benchmarks/  # 示例评估输入
 ├─ Dockerfile
 └─ docker-compose.yml
