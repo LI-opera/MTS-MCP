@@ -1,0 +1,22 @@
+name: MCP Offline Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  mcp:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: integrations/mcp/requirements-lock.txt
+      - name: Install isolated MCP dependencies
+        run: python -m pip install -r integrations/mcp/requirements-lock.txt
+      - name: Offline configuration and protocol tests
+        run: |
+          python -m integrations.mcp.server check
+          python -m unittest integrations.mcp.tests.test_mcp -v

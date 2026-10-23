@@ -1,0 +1,13 @@
+**/.env
+**/.env.*
+!**/.env.example
+**/.venv
+**/__pycache__
+**/runtime
+**/logs
+**/archive
+.git
+.run-logs
+.publish
+model_cache
+项目梳理

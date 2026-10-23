@@ -1,0 +1,14 @@
+# Merge this table into your Codex config; do not overwrite the entire file.
+# Change both absolute paths if the repository moves.
+[mcp_servers.medical_terminology]
+command = 'C:\Projects\Medical-Terminology-Standardization-MCP\integrations\mcp\.venv\Scripts\python.exe'
+args = ['-m', 'integrations.mcp.server', 'run']
+cwd = 'C:\Projects\Medical-Terminology-Standardization-MCP'
+startup_timeout_sec = 20
+tool_timeout_sec = 240
+enabled = true
+enabled_tools = ['standardize_medical_abbreviations']
+default_tools_approval_mode = 'prompt'
+
+[mcp_servers.medical_terminology.env]
+PYTHONUTF8 = '1'
